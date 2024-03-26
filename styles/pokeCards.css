@@ -1,0 +1,29 @@
+.pokeCard {
+    text-align: center;
+    width: 12%;
+    margin-inline: 2%;
+    margin-top: 3%;
+    padding: 0%;
+}
+.pokeCard > img {
+    max-height: 80%;
+    aspect-ratio: 1;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+    .pokeCard {
+        width: 20%;
+    }   
+}
+@media only screen and (max-width: 500px){
+    .pokeCard {
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 320px){
+    .pokeCard {
+        width: 50%;
+    }
+}

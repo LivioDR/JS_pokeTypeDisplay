@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/pokeCards.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center;" class="press-start">Pokemon list by type</h1>
+    <div id="inputContainer">
+        <div class="press-start" id="shinyCheck">
+            <div>
+                <input type="checkbox" name="shiny" id="shiny">
+                <label for="shiny">Shiny version</label>
+            </div>
+            <div>
+                <input type="checkbox" name="animated" id="animated">
+                <label for="animated">Animate</label>
+            </div>
+        </div>
+        <select name="typeInput" id="typeInput" class="press-start">
+            <!-- options to be populated with JS -->
+        </select>
+        <button id="confirmType" class="press-start">Search</button>
+    </div>
+    <div id="listContainer">
+        <!-- to be populated with JS -->
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
