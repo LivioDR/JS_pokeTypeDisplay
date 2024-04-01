@@ -24,10 +24,11 @@ const getPokemonCard = (arr) => {
     let statsDiv = ''
     for(const [key, val] of Object.entries(arr[2])){
         statsDiv += `<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;" title="${val}">
-        <p style="font-size: 0.5em; width:35%;">${toCapitalCase(key.replace("-"," "))}</p>
-        <div style="width:70%;">
+        <p style="font-size: 0.5em; width:30%;">${toCapitalCase(key.replace("-"," "))}</p>
+        <div style="width:60%;">
             <div style="height:0.5em;width:${(100*val)/maxOfStats}%;background-color:#6464e1;"></div>
         </div>
+        <p style="width: 5%; font-size: 0.5em;">${val}</p>
       </div>`
     }
     statsDiv = `<div>${statsDiv}</div>`
