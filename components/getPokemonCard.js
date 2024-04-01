@@ -20,10 +20,23 @@ const toCapitalCase = (name) => {
 }
 
 const getPokemonCard = (arr) => {
+    let maxOfStats = Math.max(...Object.values(arr[2]))
+    let statsDiv = ''
+    for(const [key, val] of Object.entries(arr[2])){
+        statsDiv += `<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;" title="${val}">
+        <p style="font-size: 0.5em; width:35%;">${toCapitalCase(key.replace("-"," "))}</p>
+        <div style="width:70%;">
+            <div style="height:0.5em;width:${(100*val)/maxOfStats}%;background-color:#6464e1;"></div>
+        </div>
+      </div>`
+    }
+    statsDiv = `<div>${statsDiv}</div>`
+
     return (
         `<div class="pokeCard press-start" id="${arr[0]}">
-            <img src="${arr[1]}" alt="${arr[1]}" />
             <p>${toCapitalCase(arr[0])}</p>
+            <img src="${arr[1]}" alt="${arr[1]}" style="margin-bottom: 5%;"/>
+            ${statsDiv}
         </div>`
     )
 }

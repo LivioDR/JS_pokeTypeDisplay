@@ -27,6 +27,16 @@ const getPokemonSprite = async(url) => {
     // return response.sprites.other['official-artwork'].front_default
 }
 
+const getPokemonStats = async(url) => {
+    const stats = await fetch(url).then(res => res.json()).then(res => res["stats"])
+    let statsObject = {}
+
+    for(let i=0; i<stats.length; i++){
+        statsObject[stats[i].stat.name] = stats[i].base_stat
+    }
+    return statsObject
+}
+
 const getPokemonNameAndSpriteFromObject = async(obj) => {
     /**
      * obj {Object}
@@ -40,7 +50,8 @@ const getPokemonNameAndSpriteFromObject = async(obj) => {
      */
     const name = obj.pokemon.name
     const sprite = await getPokemonSprite(obj.pokemon.url)
-    return [name, sprite]
+    const stats = await getPokemonStats(obj.pokemon.url)
+    return [name, sprite, stats]
 }
 
 export {getPokemonByType, getPokemonNameAndSpriteFromObject}
