@@ -27,7 +27,7 @@ const getPokemonCard = (arr) => {
         statsDiv += `<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">
         <p style="font-size: 0.5em; width:30%;">${toCapitalCase(key)}</p>
         <div style="width:60%;">
-            <div style="height:0.5em;width:${(100*val)/maxOfStats}%;background-color:${val === maxOfStats ? '#0d990e' : val === minOfStats ? '#990d0d' : '#6464e1'};"></div>
+            <div style="height:0.5em;width:${(100*val)/maxOfStats}%;background-color:hsl(${(val/maxOfStats)*100}deg 60% 45%);"></div>
         </div>
         <p style="width: 5%; font-size: 0.5em;">${val}</p>
       </div>`
